@@ -1,0 +1,109 @@
+*, *::after, *::before{ box-sizing: border-box;}
+
+.conteudo {
+    background-color: aliceblue;
+    padding: 5px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+/* 1º animação */
+/* etapa1: Regra de animação (animafundo) */
+
+@keyframes animaFundo {
+   0% {background-color: rgb(54, 169, 207);} 
+    20% {background-color: rgb(43, 241, 99);}
+    40% {background-color:rgb(255, 0, 0);} 
+    60% {background-color: rgb(246, 7, 134);} 
+    80% {background-color: rgb(117, 8, 151);} 
+   
+}
+
+body{
+    font-family: 'Segoe UI';
+    /* etapa2: Chamar a animação */
+    animation-name: animaFundo; 
+    animation-duration: 1s;
+    /* animation-iteration-count: 3; */
+    animation-iteration-count: infinite; 
+    /* animation-direction: alternate; */
+    animation-direction: alternate-reverse;
+
+    /* Versão abreviada:
+    animation: animaFundo 3s infinite alternate-reverse; */
+}
+
+/* ___________________________________ */
+
+/* 2º animação */
+/* etapa1: Regra de animação (aparecer) */
+@keyframes aparecer {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+#dois {
+     /* etapa2: Chamar a animação */
+     /* animation: aparecer 5s 1s backwards; */
+
+      animation-name: aparecer;
+     animation-duration:5s;
+     animation-delay: 1s;
+     animation-fill-mode: backwards;
+
+}
+
+/* ___________________________________ */
+
+/* 3º animação */
+
+#tres {
+    border: solid 3px;
+    padding: 5px;
+    width: 750px;
+    margin: auto;
+}
+
+img{
+    width: 250px;
+    height: 150px;
+}
+/* etapa1: Regra de animação (animaImagem) */
+
+@keyframes animaImagem {
+    from {transform: translateX(0) rotateY('0');}
+
+    to {transform: translateX(570px) rotateZ(360deg); opacity: 1;}
+}
+
+#tres img {
+    /* etapa2: Chamar a animação */
+
+    animation: animaImagem 2s infinite linear alternate;
+}
+/* ___________________________________ */
+
+/* 4º animação */
+
+#quatro {
+    border: solid 3px;
+    padding: 5px;
+    width: 750px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+/* etapa1: Regra de animação (animaImagem2) */
+@keyframes animaImagem2 {
+    from {transform: translateX(0);}
+    to {transform: translateX(580px);}
+}
+
+#quatro img {
+     /* etapa2: Chamar a animação */
+     animation: animaImagem2 2s infinite linear alternate;
+}
